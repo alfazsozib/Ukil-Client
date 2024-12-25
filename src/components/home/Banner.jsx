@@ -1,5 +1,7 @@
 import { useState } from "react";
 import banner from "../../assets/ukil-banner.png";
+import logo from "../../assets/ukil-logo.png";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,8 +13,8 @@ const Banner = () => {
                 <div className="flex items-center justify-between">
                     <a href="#">
                         <img
-                            className="w-auto h-6 sm:h-7"
-                            src="https://merakiui.com/images/full-logo.svg"
+                            className="h-[120px]"
+                            src={logo}
                             alt="Logo"
                         />
                     </a>
@@ -59,29 +61,29 @@ const Banner = () => {
                 >
                     <div className="flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:-px-8 lg:space-y-0">
                         <a
-                            className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-blue-400"
+                            className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
                             href="#"
                         >
                             Home
                         </a>
                         <a
-                            className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-blue-400"
+                            className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
                             href="#"
                         >
                             About
                         </a>
                         <a
-                            className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-blue-400"
+                            className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
                             href="#"
                         >
                             Constitution
                         </a>
-                        <a
-                            className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-blue-400"
+                        <Link to={'/login'}
+                            className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
                             href="#"
                         >
-                            My Account
-                        </a>
+                            Login
+                        </Link>
                     </div>
                     <div className="relative mt-4 lg:mt-0 lg:mx-4">
                         <span className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -101,7 +103,7 @@ const Banner = () => {
                         </span>
                         <input
                             type="text"
-                            className="w-full py-1 pl-10 pr-4 text-gray-700 placeholder-gray-600 bg-white border-b border-gray-600 lg:w-56 lg:border-transparent focus:outline-none focus:border-gray-600"
+                            className="w-full py-1 pl-10 pr-4 text-xl text-gray-700 placeholder-gray-600 bg-white border-b border-gray-600 lg:w-56 lg:border-transparent focus:outline-none focus:border-gray-600"
                             placeholder="Search"
                         />
                     </div>
@@ -109,7 +111,7 @@ const Banner = () => {
             </nav>
 
             {/* Hero Section */}
-            <div className="container px-6 py-16 mx-auto text-center">
+            <div className="container px-6 pb-12 mx-auto text-center">
                 <div className="max-w-lg mx-auto">
                     <h1 className="text-3xl font-semibold text-gray-800 lg:text-4xl">
                         Your Legal Partner for a Brighter Future

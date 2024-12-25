@@ -17,7 +17,7 @@ const TopRatedLawyerSearch = () => {
         <select
           value={city}
           onChange={(e) => setCity(e.target.value)}
-          className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-gray-300 rounded-none px-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">Select City</option>
           <option value="Chennai">Chennai</option>
@@ -29,7 +29,7 @@ const TopRatedLawyerSearch = () => {
         <select
           value={practiceArea}
           onChange={(e) => setPracticeArea(e.target.value)}
-          className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-gray-300 rounded-none px-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">Select Practice Areas</option>
           <option value="Criminal Law">Criminal Law</option>
@@ -40,7 +40,7 @@ const TopRatedLawyerSearch = () => {
         {/* Search Button */}
         <button
           onClick={handleSearch}
-          className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-[#2ba329] hover:bg-[#4ec74c] text-white font-medium px-6 py-2 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           Search
         </button>

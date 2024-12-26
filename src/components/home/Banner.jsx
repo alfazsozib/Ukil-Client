@@ -11,13 +11,13 @@ const Banner = () => {
             {/* Navbar */}
             <nav className="container p-6 mx-auto lg:flex lg:justify-between lg:items-center">
                 <div className="flex items-center justify-between">
-                    <a href="#">
+                    <Link to={'/'}>
                         <img
                             className="h-[120px]"
                             src={logo}
                             alt="Logo"
                         />
-                    </a>
+                    </Link>
 
                     {/* Mobile menu button */}
                     <div className="flex lg:hidden">

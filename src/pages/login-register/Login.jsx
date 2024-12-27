@@ -13,8 +13,7 @@ const Login = () => {
     const [pressLogin, setPressLogin] = useState(false);
     // console.log("Type =", userType);
 
-    const { login, user } = useContext(AuthContext);
-    console.log("user =", user);
+    const { login } = useContext(AuthContext);
 
     const chooseUserType = async (type) => {
         setPressLogin(false);

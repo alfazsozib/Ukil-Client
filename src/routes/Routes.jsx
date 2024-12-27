@@ -4,6 +4,9 @@ import Home from "../pages/home/Home";
 import AdvocateRegister from "../pages/login-register/AdvocateRegister";
 import Login from "../pages/login-register/Login";
 import UserRegister from "../pages/login-register/UserRegister";
+import AdvocateProfile from "../pages/profile/AdvocateProfile";
+import UserProfile from "../pages/profile/UserProfile";
+import Advocate from "../pages/advocate/Advocate";
 
 export const router = createBrowserRouter([
     {
@@ -13,6 +16,10 @@ export const router = createBrowserRouter([
         {
             path: '/',
             element: <Home/>
+        },
+        {
+            path: '/advocates',
+            element: <Advocate/>
         },
         {
             path: '/advocate-register',
@@ -25,6 +32,14 @@ export const router = createBrowserRouter([
         {
             path: '/login',
             element: <Login/>
+        },
+        {
+            path: '/advocate-profile',
+            element: <AdvocateProfile/>
+        },
+        {
+            path: '/user-profile',
+            element: <UserProfile/>
         },
       ]
     },

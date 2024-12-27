@@ -6,6 +6,7 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [type, setType] = useState(null);
 
     const axiosPublic = useAxiosPublic();
 
@@ -23,6 +24,7 @@ const AuthProvider = ({ children }) => {
             localStorage.setItem('email', email);
 
             setUser(response.data.user);
+            setType(userType);
         }
 
 
@@ -32,13 +34,14 @@ const AuthProvider = ({ children }) => {
 
     const logout = () => {
         localStorage.removeItem('token');
-        localStorage.removeItem('credential');
         localStorage.removeItem('type');
+        localStorage.removeItem('email');
         setUser(null);
+        setType(null);
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout }}>
+        <AuthContext.Provider value={{ user, type, login, logout}}>
             {children}
         </AuthContext.Provider>
     );

@@ -15,6 +15,8 @@ const AdvocateRegister = () => {
 
         const name = form.name.value;
         const email = form.email.value;
+        const address = form.address.value;
+        const city = form.city.value;
         const number = form.number.value;
         const license = form.license.value;
         const yearOfPractice = form.yearOfPractice.value;
@@ -33,6 +35,8 @@ const AdvocateRegister = () => {
         const userInfo = {
             name,
             email,
+            address,
+            city,
             number,
             license,
             yearOfPractice,
@@ -80,6 +84,10 @@ const AdvocateRegister = () => {
                     <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Full Name" name="name" />
 
                     <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="email" placeholder="Email Address" name="email" />
+
+                    <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Address" name="address" />
+
+                    <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Practicing City" name="city" />
 
                     <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Phone Number" name="number" />
 

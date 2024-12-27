@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import banner from "../../assets/ukil-banner.png";
 import logo from "../../assets/ukil-logo.png";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/UserProvider";
 
 const Banner = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const { logout } = useContext(AuthContext);
 
     return (
         <section className="bg-white">
@@ -66,24 +69,46 @@ const Banner = () => {
                         >
                             Home
                         </a>
-                        <a
+                        <Link to={'/advocates'}
                             className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
                             href="#"
                         >
-                            About
-                        </a>
+                            Advocates
+                        </Link>
                         <a
                             className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
                             href="#"
                         >
                             Constitution
                         </a>
-                        <Link to={'/login'}
-                            className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
-                            href="#"
-                        >
-                            Login
-                        </Link>
+                        {
+                            localStorage.type ? <>
+                                {
+                                    localStorage.type === 'User' ?
+                                        <Link to={'/user-profile'}
+                                            className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
+                                            href="#"
+                                        >
+                                            Profile
+                                        </Link>
+                                        : <Link to={'/advocate-profile'}
+                                            className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
+                                            href="#"
+                                        >
+                                            Profile
+                                        </Link>
+                                }
+                                <button
+                                    onClick={() => logout()}
+                                    className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium">Logout</button>
+                            </>
+                                : <Link to={'/login'}
+                                    className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
+                                    href="#"
+                                >
+                                    Login
+                                </Link>
+                        }
                     </div>
                     <div className="relative mt-4 lg:mt-0 lg:mx-4">
                         <span className="absolute inset-y-0 left-0 flex items-center pl-3">

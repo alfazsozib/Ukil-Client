@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AdvocateCard from "../../components/cards/AdvocateCard";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { SearchContext } from "../../provider/SearchProvider";
 
 const Advocate = () => {
 
     const axiosPublic = useAxiosPublic();
 
-    const [city, setCity] = useState('');
-    const [practiceArea, setPracticeArea] = useState('');
+    
+    const {city, setCity, practiceArea, setPracticeArea} = useContext(SearchContext);
+
     const [allAdvocates, setAllAdvocates] = useState(null);
     console.log("all advo =", allAdvocates);
 
@@ -27,11 +29,10 @@ const Advocate = () => {
         fetchAdvocates();
         window.scroll(0, 0);
 
-    }, [city, practiceArea]);
+    }, []);
 
     const handleSearch = () => {
-        console.log('Searching for lawyers in:', city, 'with practice area:', practiceArea);
-        // Add search functionality here
+        fetchAdvocates();
     };
 
     return (
@@ -44,9 +45,9 @@ const Advocate = () => {
                     className="border border-gray-300 rounded-none px-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                     <option value="">Select City</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Mumbai">Mumbai</option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Rajshahi">Rajshahi</option>
+                    <option value="Khulna">Khulna</option>
                 </select>
 
                 {/* Practice Area Dropdown */}
@@ -56,9 +57,9 @@ const Advocate = () => {
                     className="border border-gray-300 rounded-none px-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                     <option value="">Select Practice Areas</option>
-                    <option value="Criminal Law">Criminal Law</option>
-                    <option value="Family Law">Family Law</option>
-                    <option value="Corporate Law">Corporate Law</option>
+                    <option value="Criminal">Criminal</option>
+                    <option value="Family">Family</option>
+                    <option value="Civil">Civil</option>
                 </select>
 
                 {/* Search Button */}

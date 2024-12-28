@@ -1,12 +1,20 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { SearchContext } from "../../provider/SearchProvider";
+import { useNavigate } from "react-router-dom";
 
 const TopRatedLawyerSearch = () => {
-  const [city, setCity] = useState('');
-  const [practiceArea, setPracticeArea] = useState('');
+  // const [city, setCity] = useState('');
+  // const [practiceArea, setPracticeArea] = useState('');
+  const navigate = useNavigate();
+
+  const {city, setCity, practiceArea, setPracticeArea} = useContext(SearchContext);
 
   const handleSearch = () => {
     console.log('Searching for lawyers in:', city, 'with practice area:', practiceArea);
     // Add search functionality here
+      if (city && practiceArea) {
+        navigate('/advocates');
+      }
   };
 
   return (
@@ -20,9 +28,9 @@ const TopRatedLawyerSearch = () => {
           className="border border-gray-300 rounded-none px-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">Select City</option>
-          <option value="Chennai">Chennai</option>
-          <option value="Delhi">Delhi</option>
-          <option value="Mumbai">Mumbai</option>
+          <option value="Dhaka">Dhaka</option>
+          <option value="Rajshahi">Rajshahi</option>
+          <option value="Khulna">Khulna</option>
         </select>
 
         {/* Practice Area Dropdown */}
@@ -32,9 +40,9 @@ const TopRatedLawyerSearch = () => {
           className="border border-gray-300 rounded-none px-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">Select Practice Areas</option>
-          <option value="Criminal Law">Criminal Law</option>
-          <option value="Family Law">Family Law</option>
-          <option value="Corporate Law">Corporate Law</option>
+          <option value="Criminal">Criminal</option>
+          <option value="Family">Family</option>
+          <option value="Civil">Civil</option>
         </select>
 
         {/* Search Button */}

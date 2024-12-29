@@ -1,10 +1,19 @@
+import { useState } from "react";
 import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 import { PiBagFill } from "react-icons/pi";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { useParams } from "react-router-dom";
+import CaseRequestModal from "../../components/modals/CaseRequestModal";
 
 const AdvocateDetails = () => {
     const { id } = useParams();
+
+
+    // Case Request 
+    const [isOpen, setIsOpen] = useState(false);
+
+
+
     return (
         <div className="flex gap-4 container mx-auto my-10">
             <div className="w-3/12 flex flex-col gap-3 items-center justify-center">
@@ -25,8 +34,12 @@ const AdvocateDetails = () => {
                         </div>
                     </div>
                     <div className="w-1/2 flex justify-end gap-4">
-                        <button className="py-2 px-4 border border-[#2ba329] text-[#2ba329] text-lg font-medium hover:bg-[#2ba329] hover:text-white">Send Case Request</button>
-                        <button className="py-2 px-4 border border-[#2ba329] text-[#2ba329] text-lg font-medium hover:bg-[#2ba329] hover:text-white">Review </button>
+                        <button
+                            onClick={() => setIsOpen(true)}
+                            className="py-2 px-4 border border-[#2ba329] text-[#2ba329] text-lg font-normal hover:border-2 hover:border-[#30d32d] hover:text-[#2ba329] hover:font-semibold">
+                            Send Case Request
+                        </button>
+                        <button className="py-2 px-4 border border-[#2ba329] text-[#2ba329] text-lg font-normal hover:border-2 hover:border-[#30d32d] hover:text-[#2ba329] hover:font-semibold">Review </button>
                     </div>
                 </div>
                 <hr />
@@ -49,6 +62,10 @@ const AdvocateDetails = () => {
                     </div>
                 </div>
             </div>
+
+            {
+                isOpen && <CaseRequestModal isOpen={isOpen} setIsOpen={setIsOpen} id={id}></CaseRequestModal>
+            }
         </div>
     );
 };

@@ -1,13 +1,19 @@
 import { useContext, useState } from "react";
 import banner from "../../assets/ukil-banner.png";
 import logo from "../../assets/ukil-logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/UserProvider";
 
 const Banner = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const { logout } = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const handleLogout = () =>{
+        logout();
+        navigate('/login');
+    }
 
     return (
         <section className="bg-white">
@@ -99,7 +105,7 @@ const Banner = () => {
                                         </Link>
                                 }
                                 <button
-                                    onClick={() => logout()}
+                                    onClick={() => handleLogout()}
                                     className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium">Logout</button>
                             </>
                                 : <Link to={'/login'}

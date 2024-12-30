@@ -1,9 +1,34 @@
 import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 import { PiBagFill } from "react-icons/pi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AdvocateCard = ({ advocate }) => {
     const { chamber, eduQualification, email, graduationYear, address, license, name, number, password, practiceArea, university, yearOfPractice, _id, city } = advocate;
+
+    const navigate = useNavigate();
+    const handleNotLogin = () => {
+
+        Swal.fire({
+            title: "For seeing the detail you have to Login First",
+            confirmButtonColor: '#2ba329',
+            showClass: {
+                popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+                popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+        });
+        navigate('/login');
+    }
     return (
         <div className="p-4 bg-gray-50 text-gray-800 flex items-center justify-between border border-[#2ba329] m-4">
             <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row w-1/2">
@@ -36,11 +61,20 @@ const AdvocateCard = ({ advocate }) => {
                         <span>4.5 | 150+ User Ratings</span>
                     </div>
                     <p className="mt-2 text-gray-700 capitalize font-normal">Practice Area & Skill <br /> <span className="font-semibold">{practiceArea}</span></p>
-                    <button className="p-2 bg-[#2ba329] text-white font-normal">
-                        <Link to={`/advocate/${_id}`}>
-                            View Details
-                        </Link>
-                    </button>
+                    {
+                        localStorage.token ?
+                            <button
+                                className="p-2 bg-[#2ba329] text-white font-normal">
+                                <Link to={`/advocate/${_id}`}>
+                                    View Details
+                                </Link>
+                            </button>
+                            : <button
+                                onClick={() => handleNotLogin()}
+                                className="p-2 bg-[#2ba329] text-white font-normal">
+                                View Details
+                            </button>
+                    }
                 </div>
 
             </div>

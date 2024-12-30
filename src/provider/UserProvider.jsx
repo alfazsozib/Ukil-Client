@@ -8,6 +8,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [type, setType] = useState(null);
 
+
     const axiosPublic = useAxiosPublic();
 
 

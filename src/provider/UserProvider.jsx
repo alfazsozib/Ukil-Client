@@ -20,6 +20,7 @@ const AuthProvider = ({ children }) => {
 
         if (response.data.token) {
             localStorage.setItem('token', response.data.token);
+            localStorage.setItem('userName', response.data.user.name);
             localStorage.setItem('type', userType);
             localStorage.setItem('email', email);
 
@@ -34,6 +35,7 @@ const AuthProvider = ({ children }) => {
 
     const logout = () => {
         localStorage.removeItem('token');
+        localStorage.removeItem('userName');
         localStorage.removeItem('type');
         localStorage.removeItem('email');
         setUser(null);

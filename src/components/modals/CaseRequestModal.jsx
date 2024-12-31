@@ -12,11 +12,11 @@ const CaseRequestModal = ({ isOpen, setIsOpen, id, name }) => {
         e.preventDefault();
 
         const message = e.target.message.value;
-        const name = localStorage.name;
-        const email = localStorage.email;
+        const userName = localStorage.getItem("userName");
+        const email = localStorage.getItem("email");
 
         const requestInfo = {
-            name,
+            userName,
             email,
             advocateId: id,
             message

@@ -39,11 +39,11 @@ export const router = createBrowserRouter([
             element: <Login/>
         },
         {
-            path: '/advocate-profile',
+            path: `/advocate-profile/:userName`,
             element: <AdvocateProfile/>
         },
         {
-            path: '/user-profile',
+            path: `/user-profile/:userName`,
             element: <UserProfile/>
         },
       ]

@@ -10,10 +10,13 @@ const Banner = () => {
     const { logout } = useContext(AuthContext);
 
     const navigate = useNavigate();
-    const handleLogout = () =>{
+    const handleLogout = () => {
         logout();
         navigate('/login');
     }
+
+    const userName = localStorage.getItem('userName') || 'Guest';
+    const formattedUserName = userName.replace(/\s+/g, '_');
 
     return (
         <section className="bg-white">
@@ -88,16 +91,18 @@ const Banner = () => {
                             Constitution
                         </a>
                         {
-                            localStorage.type ? <>
+                            localStorage.getItem('type') ? <>
                                 {
-                                    localStorage.type === 'User' ?
-                                        <Link to={'/user-profile'}
+                                    localStorage.getItem('type') === 'User' ?
+                                        <Link 
+                                        to={`/user-profile/${formattedUserName}`}
                                             className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
                                             href="#"
                                         >
                                             Profile
                                         </Link>
-                                        : <Link to={'/advocate-profile'}
+                                        : <Link 
+                                        to={`/advocate-profile/${formattedUserName}`}
                                             className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
                                             href="#"
                                         >

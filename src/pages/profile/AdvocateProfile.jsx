@@ -9,7 +9,7 @@ import './tab-css/Tab.css';
 const AdvocateProfile = () => {
 
     const [advocate] = useAdvocateInfo();
-    console.log("Advocate info by mail =", advocate);
+    // console.log("Advocate info by mail =", advocate);
 
     const { chamber, eduQualification, email, graduationYear, address, license, name, number, password, practiceArea, university, yearOfPractice, _id, city } = advocate;
 

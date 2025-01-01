@@ -4,6 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import './tab-css/Tab.css';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
+import CaseRequestsByUser from "./user-docs/CaseRequestsByUser";
 
 const UserProfile = () => {
 
@@ -56,7 +57,7 @@ const UserProfile = () => {
                     </TabList>
 
                     <TabPanel>
-                        <h2>Case Requests by users</h2>
+                        <CaseRequestsByUser />
                     </TabPanel>
                     <TabPanel>
                         <h2>Bookmark Articles</h2>

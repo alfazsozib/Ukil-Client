@@ -12,6 +12,7 @@ const CaseRequestModal = ({ isOpen, setIsOpen, id, name }) => {
         e.preventDefault();
 
         const message = e.target.message.value;
+        const heading = e.target.heading.value;
         const userName = localStorage.getItem("userName");
         const email = localStorage.getItem("email");
 
@@ -19,6 +20,7 @@ const CaseRequestModal = ({ isOpen, setIsOpen, id, name }) => {
             userName,
             email,
             advocateId: id,
+            heading,
             message
         }
 
@@ -85,8 +87,17 @@ const CaseRequestModal = ({ isOpen, setIsOpen, id, name }) => {
                                         readOnly
                                         className="col-span-5 border-b focus:outline-none focus:border-[#2ba329] text-[#2ba329]" type="text" />
                                 </div>
+                                <div className="grid grid-cols-6 gap-2">
+                                    <h3 className="col-span-2 text-slate-600 font-medium">Heading : </h3>
+                                    <input
+                                        required
+                                        placeholder="Must be within 25 letters"
+                                        className="col-span-6 border-b focus:outline-none focus:border-[#2ba329] text-gray-600" type="text" name="heading" />
+                                </div>
                                 <div>
-                                    <textarea className="w-full p-2 border focus:outline-none  focus:border-[#2ba329]" rows={10} placeholder="Place your message...." name="message" id=""></textarea>
+                                    <textarea
+                                        required
+                                        className="w-full p-2 border focus:outline-none  focus:border-[#2ba329] text-gray-600" rows={10} placeholder="Place your message...." name="message" id=""></textarea>
                                 </div>
 
                                 <div className="mt-4 flex justify-end">

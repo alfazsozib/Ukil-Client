@@ -5,6 +5,7 @@ import { PiBagFill } from "react-icons/pi";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
 import './tab-css/Tab.css';
+import CaseRequestsOfAdvocate from "./advocate-docs/CaseRequestsOfAdvocate";
 
 const AdvocateProfile = () => {
 
@@ -89,7 +90,7 @@ const AdvocateProfile = () => {
 
             {/* Tab Section */}
 
-            <div className="mt-20 px-12">
+            <div className="mt-20 lg:px-12">
                 <Tabs>
                     <TabList>
                         <Tab>Case Requests</Tab>
@@ -98,7 +99,7 @@ const AdvocateProfile = () => {
                     </TabList>
 
                     <TabPanel>
-                        <h2>Case Requests from users</h2>
+                        <CaseRequestsOfAdvocate />
                     </TabPanel>
                     <TabPanel>
                         <h2>Articles of Advocate</h2>

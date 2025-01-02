@@ -17,12 +17,14 @@ const useAdvocateInfo = () => {
     
     console.log(advocateInfo.advocate);
     console.log(advocateInfo.caseRequests);
+    console.log(advocateInfo.articles);
     
     // Ensure advocateInfo is not undefined before destructuring
     const advocate = advocateInfo?.advocate || [];
     const caseRequests = advocateInfo?.caseRequests || [];
+    const articles = advocateInfo?.articles || [];
 
-    return [advocate, caseRequests, refetch];
+    return [advocate, caseRequests, articles, refetch];
 };
 
 export default useAdvocateInfo;

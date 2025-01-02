@@ -6,6 +6,7 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
 import './tab-css/Tab.css';
 import CaseRequestsOfAdvocate from "./advocate-docs/CaseRequestsOfAdvocate";
+import ArticlesByAdvocate from "./advocate-docs/ArticlesByAdvocate";
 
 const AdvocateProfile = () => {
 
@@ -102,7 +103,7 @@ const AdvocateProfile = () => {
                         <CaseRequestsOfAdvocate />
                     </TabPanel>
                     <TabPanel>
-                        <h2>Articles of Advocate</h2>
+                        <ArticlesByAdvocate id={_id} />
                     </TabPanel>
                     <TabPanel>
                         <h2>Reviews from users</h2>

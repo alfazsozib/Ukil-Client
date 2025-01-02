@@ -9,12 +9,13 @@ import useAdvocateDetailsById from "../../hooks/useAdvocateDetailsById";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
 import '../profile/tab-css/Tab.css';
+import ArticlesTab from "./ArticlesTab";
 
 const AdvocateDetails = () => {
     const { id } = useParams();
 
     const [advocate] = useAdvocateDetailsById(id);
-    console.log("Detail = ", advocate);
+    // console.log("Detail = ", advocate);
 
     const { name, city, practiceArea, yearOfPractice } = advocate;
 
@@ -87,7 +88,7 @@ const AdvocateDetails = () => {
                     </TabList>
 
                     <TabPanel>
-                        <h2>Articles of Advocate</h2>
+                        <ArticlesTab id={id} />
                     </TabPanel>
                     <TabPanel>
                         <h2>Reviews from users</h2>

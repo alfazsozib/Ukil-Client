@@ -5,7 +5,7 @@ const useAdvocateDetailsById = (id) => {
 
     const axiosPublic = useAxiosPublic();
 
-    const { data: advocate = {} , refetch} = useQuery({
+    const { data: advocateDetails = {} , refetch} = useQuery({
         queryKey: ['advocateDetails'],
         queryFn: async () => {
             const res = await axiosPublic.get(`/advocateDetail?id=${id}`);
@@ -14,9 +14,12 @@ const useAdvocateDetailsById = (id) => {
         }
     })
 
-    console.log(advocate);
+    console.log(advocateDetails);
 
-    return [advocate, refetch];
+    const advocate = advocateDetails?.advocate || [];
+    const articles = advocateDetails?.articles || [];
+
+    return [advocate, articles, refetch];
 };
 
 export default useAdvocateDetailsById;

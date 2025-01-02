@@ -84,12 +84,12 @@ const Banner = () => {
                         >
                             Advocates
                         </Link>
-                        <a
+                        <Link to={'/articles'}
                             className="text-gray-700 transition-colors duration-300 transform lg:mx-8  hover:text-[#2ba329] text-xl font-medium"
                             href="#"
                         >
-                            Constitution
-                        </a>
+                            Articles
+                        </Link>
                         {
                             localStorage.getItem('type') ? <>
                                 {

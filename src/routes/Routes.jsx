@@ -8,6 +8,7 @@ import AdvocateProfile from "../pages/profile/AdvocateProfile";
 import UserProfile from "../pages/profile/UserProfile";
 import Advocate from "../pages/advocate/Advocate";
 import AdvocateDetails from "../pages/advocate-details/AdvocateDetails";
+import ArticlesPage from "../pages/articles/ArticlesPage";
 
 export const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
         {
             path: '/advocates',
             element: <Advocate/>
+        },
+        {
+            path: '/articles',
+            element: <ArticlesPage/>
         },
         {
             path: '/advocate/:id',

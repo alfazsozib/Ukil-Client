@@ -4,42 +4,42 @@ import { MdOutlineCancel } from "react-icons/md";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 
-const CaseRequestModal = ({ isOpen, setIsOpen, id, name }) => {
+const ReviewModal = ({ isOpen, setIsOpen, id, name }) => {
 
     const axiosPublic = useAxiosPublic();
 
-    const handleRequest = async e => {
+    const handleReview = async e => {
         e.preventDefault();
 
-        const message = e.target.message.value;
-        const heading = e.target.heading.value;
+        const review = e.target.review.value;
+        const rating = e.target.rating.value;
         const userName = localStorage.getItem("userName");
         const email = localStorage.getItem("email");
 
-        const requestInfo = {
+        const reviewDoc = {
             userName,
             email,
             advocateId: id,
-            heading,
-            message
+            rating,
+            review
         }
 
-        // console.log(requestInfo);
+        console.log(reviewDoc);
 
-        const res = await axiosPublic.post('/caseRequest', requestInfo);
+        // const res = await axiosPublic.post('/caseRequest', reviewDoc);
 
-        if (res.data.insertedId) {
-            setIsOpen(false);
+        // if (res.data.insertedId) {
+        //     setIsOpen(false);
 
-            Swal.fire({
-                position: "top-center",
-                icon: "success",
-                title: `You have successfully sent a case request to Advocate ${name}`,
-                showConfirmButton: false,
-                timer: 2000
-            });
+        //     Swal.fire({
+        //         position: "top-center",
+        //         icon: "success",
+        //         title: `You have successfully sent a case request to Advocate ${name}`,
+        //         showConfirmButton: false,
+        //         timer: 2000
+        //     });
 
-        }
+        // }
 
 
     }
@@ -68,11 +68,11 @@ const CaseRequestModal = ({ isOpen, setIsOpen, id, name }) => {
                         </button>
 
                         <DialogTitle as="h3" className="text-base/7 font-medium text-slate-600 text-center">
-                            Case Request To - <br />
+                            Review To - <br />
                             <span className="text-xl font-semibold">Advocate {name}</span>
                         </DialogTitle>
                         <div className="mt-6">
-                            <form onSubmit={handleRequest} className="space-y-5">
+                            <form onSubmit={handleReview} className="space-y-5">
                                 <div className="grid grid-cols-6 gap-2">
                                     <h3 className="col-span-1 text-slate-600 font-medium">Name : </h3>
                                     <input
@@ -88,16 +88,17 @@ const CaseRequestModal = ({ isOpen, setIsOpen, id, name }) => {
                                         className="col-span-5 border-b focus:outline-none focus:border-[#2ba329] text-[#2ba329]" type="text" />
                                 </div>
                                 <div className="grid grid-cols-6 gap-2">
-                                    <h3 className="col-span-1 text-slate-600 font-medium">Title : </h3>
+                                    <h3 className="col-span-1 text-slate-600 font-medium">Rating : </h3>
                                     <input
                                         required
-                                        placeholder="Request Title..."
-                                        className="col-span-5 border-b focus:outline-none focus:border-[#2ba329] text-gray-600" type="text" name="heading" />
+                                        placeholder={`Rate advocate ${name}...`}
+                                        className="col-span-5 border-b focus:outline-none focus:border-[#2ba329] text-gray-600" 
+                                        type="number" name="rating" />
                                 </div>
                                 <div>
                                     <textarea
                                         required
-                                        className="w-full p-2 border focus:outline-none  focus:border-[#2ba329] text-gray-600" rows={10} placeholder="Place your message...." name="message" id=""></textarea>
+                                        className="w-full p-2 border focus:outline-none  focus:border-[#2ba329] text-gray-600" rows={10} placeholder={`Thought about advocate ${name}...`} name="review" id=""></textarea>
                                 </div>
 
                                 <div className="mt-4 flex justify-end">
@@ -125,4 +126,4 @@ const CaseRequestModal = ({ isOpen, setIsOpen, id, name }) => {
     );
 };
 
-export default CaseRequestModal;
+export default ReviewModal;

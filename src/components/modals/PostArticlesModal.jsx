@@ -61,7 +61,7 @@ const PostArticlesModal = ({ isOpen, setIsOpen, id, refetch }) => {
 
                     <DialogPanel
                         transition
-                        className="w-full max-w-md rounded-xl bg-white p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 relative"
+                        className="w-full max-w-xl rounded-xl bg-white p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 relative"
                     >
                         <button
                             onClick={() => setIsOpen(false)}
@@ -75,11 +75,11 @@ const PostArticlesModal = ({ isOpen, setIsOpen, id, refetch }) => {
                         <div className="mt-6">
                             <form onSubmit={handlePostArticles} className="space-y-5">
                                 <div className="grid grid-cols-6 gap-2">
-                                    <h3 className="col-span-2 text-slate-600 font-medium">Heading : </h3>
+                                    <h3 className="col-span-1 text-slate-600 font-medium">Title : </h3>
                                     <input
                                         required
-                                        placeholder="Must be within 25 letters"
-                                        className="col-span-6 border-b focus:outline-none focus:border-[#2ba329] text-gray-600" type="text" name="heading" />
+                                        placeholder="Article Title..."
+                                        className="col-span-5 border-b focus:outline-none focus:border-[#2ba329] text-gray-600" type="text" name="heading" />
                                 </div>
                                 <div>
                                     <textarea

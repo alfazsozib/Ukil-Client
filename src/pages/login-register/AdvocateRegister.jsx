@@ -2,10 +2,16 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/ukil-logo.png";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import PracticeField from "./combobox/PracticeField";
+import { useState } from "react";
 const AdvocateRegister = () => {
 
     const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
+
+    // Practice Field from combobox
+    const [selectedField, setSelectedField] = useState("");
+    console.log("field =",selectedField);
 
 
     const handelSignUp = async e => {
@@ -21,7 +27,7 @@ const AdvocateRegister = () => {
         const license = form.license.value;
         const yearOfPractice = form.yearOfPractice.value;
         const chamber = form.chamber.value;
-        const practiceArea = form.practiceArea.value;
+        const practiceArea = selectedField;
         const eduQualification = form.eduQualification.value;
         const university = form.university.value;
         const graduationYear = form.graduationYear.value;
@@ -31,7 +37,7 @@ const AdvocateRegister = () => {
         if (password != confirmPassword) {
             return alert("Check Password");
         }
-        
+
         const userInfo = {
             name,
             email,
@@ -64,7 +70,7 @@ const AdvocateRegister = () => {
                 timer: 1500
             });
 
-             navigate('/login');
+            navigate('/login');
         }
 
 
@@ -85,9 +91,15 @@ const AdvocateRegister = () => {
 
                     <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="email" placeholder="Email Address" name="email" />
 
-                    <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Address" name="address" />
+                    {/* <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Practice Area" name="practiceArea" /> */}
+
+                    <div className="w-5/6 mx-auto">
+                        <PracticeField setSelectedField={setSelectedField} />
+                    </div>
 
                     <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Practicing City" name="city" />
+
+                    <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Address" name="address" />
 
                     <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Phone Number" name="number" />
 
@@ -97,7 +109,7 @@ const AdvocateRegister = () => {
 
                     <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Chamber Name" name="chamber" />
 
-                    <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Practice Area" name="practiceArea" />
+
 
                     <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Educational Qualifications" name="eduQualification" />
 

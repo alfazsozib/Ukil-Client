@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AdvocateCard = ({ advocate }) => {
-    const { chamber, eduQualification, email, graduationYear, address, license, name, number, password, practiceArea, university, yearOfPractice, _id, city } = advocate;
+    const { chamber, eduQualification, email, graduationYear, address, license, name, number, password, practiceArea, university, yearOfPractice, _id, court } = advocate;
 
     const navigate = useNavigate();
     const handleNotLogin = () => {
@@ -38,7 +38,7 @@ const AdvocateCard = ({ advocate }) => {
                         <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-xl ">{name}</h1>
                         <div className="flex items-center gap-4">
                             <FaMapMarkerAlt className="text-[#2ba329] text-xl" />
-                            <p className="text-gray-700 font-normal">{city}</p>
+                            <p className="text-gray-700 font-normal">{court}</p>
                         </div>
                         <div className="flex items-center gap-4">
                             <PiBagFill className="text-[#2ba329] text-xl" />

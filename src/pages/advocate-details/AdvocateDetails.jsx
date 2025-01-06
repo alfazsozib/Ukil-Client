@@ -18,7 +18,7 @@ const AdvocateDetails = () => {
     const [advocate] = useAdvocateDetailsById(id);
     // console.log("Detail = ", advocate);
 
-    const { name, city, practiceArea, yearOfPractice } = advocate;
+    const { name, court, practiceArea, yearOfPractice } = advocate;
 
 
     // Case Request 
@@ -64,7 +64,7 @@ const AdvocateDetails = () => {
                         <div className="space-y-3">
                             <div className="flex items-center gap-4">
                                 <FaMapMarkerAlt className="text-[#2ba329] text-xl" />
-                                <p className="text-gray-700 font-normal">Location : <span className="font-semibold">{city}</span></p>
+                                <p className="text-gray-700 font-normal">Court : <span className="font-semibold">{court}</span></p>
                             </div>
 
                             <div className="flex items-center gap-4">

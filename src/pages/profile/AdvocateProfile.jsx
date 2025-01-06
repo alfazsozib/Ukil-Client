@@ -13,7 +13,7 @@ const AdvocateProfile = () => {
     const [advocate] = useAdvocateInfo();
     // console.log("Advocate info by mail =", advocate);
 
-    const { chamber, eduQualification, email, graduationYear, address, license, name, number, password, practiceArea, university, yearOfPractice, _id, city } = advocate;
+    const { chamber, eduQualification, email, graduationYear, address, license, name, number, password, practiceArea, university, yearOfPractice, _id, court } = advocate;
 
 
     return (
@@ -40,7 +40,7 @@ const AdvocateProfile = () => {
                         <div className="space-y-6 w-1/3">
                             <div className="flex items-center gap-4">
                                 <FaMapMarkerAlt className="text-[#2ba329] text-xl" />
-                                <p className="text-gray-700 font-normal">Location : <span className="font-semibold">{city}</span></p>
+                                <p className="text-gray-700 font-normal">Location : <span className="font-semibold">{court}</span></p>
                             </div>
 
                             <div className="flex items-center gap-4">

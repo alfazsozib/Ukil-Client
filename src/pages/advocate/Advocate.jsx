@@ -2,13 +2,15 @@ import { useContext, useEffect, useState } from "react";
 import AdvocateCard from "../../components/cards/AdvocateCard";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { SearchContext } from "../../provider/SearchProvider";
+import PracticeFields from "../login-register/combobox/PracticeField";
+import PracticingCourt from "../login-register/combobox/PracticeArea";
 
 const Advocate = () => {
 
     const axiosPublic = useAxiosPublic();
 
-    
-    const {city, setCity, practiceArea, setPracticeArea} = useContext(SearchContext);
+
+    const { selectedCourt, setSelectedCourt, selectedField, setSelectedField } = useContext(SearchContext);
 
     const [allAdvocates, setAllAdvocates] = useState(null);
     console.log("all advo =", allAdvocates);
@@ -16,8 +18,8 @@ const Advocate = () => {
     const fetchAdvocates = async () => {
         const response = await axiosPublic.get('/advocates', {
             params: {
-                city,
-                practiceArea
+                selectedCourt,
+                selectedField
             }
         });
         setAllAdvocates(response.data.advocates);
@@ -39,7 +41,7 @@ const Advocate = () => {
         <div className="flex gap-6 container mx-auto">
             <div className="w-1/4 h-48 grid grid-cols-1 gap-4 m-4">
                 {/* City Dropdown */}
-                <select
+                {/* <select
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                     className="border border-gray-300 rounded-none px-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -48,10 +50,10 @@ const Advocate = () => {
                     <option value="Dhaka">Dhaka</option>
                     <option value="Rajshahi">Rajshahi</option>
                     <option value="Khulna">Khulna</option>
-                </select>
+                </select> */}
 
                 {/* Practice Area Dropdown */}
-                <select
+                {/* <select
                     value={practiceArea}
                     onChange={(e) => setPracticeArea(e.target.value)}
                     className="border border-gray-300 rounded-none px-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -60,7 +62,10 @@ const Advocate = () => {
                     <option value="Criminal">Criminal</option>
                     <option value="Family">Family</option>
                     <option value="Civil">Civil</option>
-                </select>
+                </select> */}
+
+                <PracticeFields setSelectedField={setSelectedField} />
+                <PracticingCourt setSelectedCourt={setSelectedCourt} />
 
                 {/* Search Button */}
                 <button

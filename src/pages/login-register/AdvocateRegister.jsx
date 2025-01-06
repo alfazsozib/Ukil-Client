@@ -4,6 +4,7 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import PracticeField from "./combobox/PracticeField";
 import { useState } from "react";
+import PracticingCourt from "./combobox/PracticeArea";
 const AdvocateRegister = () => {
 
     const axiosPublic = useAxiosPublic();
@@ -12,6 +13,10 @@ const AdvocateRegister = () => {
     // Practice Field from combobox
     const [selectedField, setSelectedField] = useState("");
     console.log("field =",selectedField);
+
+    // Practice Area from combobox
+    const [selectedCourt, setSelectedCourt] = useState("");
+    console.log("Court =",selectedCourt);
 
 
     const handelSignUp = async e => {
@@ -22,7 +27,7 @@ const AdvocateRegister = () => {
         const name = form.name.value;
         const email = form.email.value;
         const address = form.address.value;
-        const city = form.city.value;
+        const court = selectedCourt;
         const number = form.number.value;
         const license = form.license.value;
         const yearOfPractice = form.yearOfPractice.value;
@@ -42,7 +47,7 @@ const AdvocateRegister = () => {
             name,
             email,
             address,
-            city,
+            court,
             number,
             license,
             yearOfPractice,
@@ -97,7 +102,11 @@ const AdvocateRegister = () => {
                         <PracticeField setSelectedField={setSelectedField} />
                     </div>
 
-                    <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Practicing City" name="city" />
+                    <div className="w-5/6 mx-auto">
+                        <PracticingCourt setSelectedCourt={setSelectedCourt} />
+                    </div>
+
+                    {/* <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Practicing court" name="court" /> */}
 
                     <input className="border-b border-gray-400 focus:outline-none focus:border-[#2ba329] focus:ring-0 w-5/6 py-2 px-4 my-3 mx-auto" type="text" placeholder="Address" name="address" />
 

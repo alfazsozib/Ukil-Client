@@ -3,11 +3,11 @@ import { createContext, useState } from "react";
 export const SearchContext = createContext();
 
 const SearchProvider = ({ children }) => {
-    const [city, setCity] = useState("All");
-    const [practiceArea, setPracticeArea] = useState("All");
+    const [selectedCourt, setSelectedCourt] = useState("All");
+    const [selectedField, setSelectedField] = useState("All");
 
     return (
-        <SearchContext.Provider value={{ city, setCity, practiceArea, setPracticeArea }}>
+        <SearchContext.Provider value={{ selectedCourt, setSelectedCourt, selectedField, setSelectedField }}>
             {children}
         </SearchContext.Provider>
     );

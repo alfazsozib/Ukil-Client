@@ -75,7 +75,7 @@ const AdvocateRegister = () => {
                 timer: 1500
             });
 
-            navigate('/login');
+            // navigate('/login');
         }
 
 

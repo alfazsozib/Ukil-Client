@@ -21,7 +21,7 @@ const TopRatedLawyerSearch = () => {
 
   return (
     <div className="flex flex-col items-center mb-20">
-      <h2 className="text-2xl font-semibold mb-4">Search For Top-Rated Lawyers</h2>
+      <h2 className="text-3xl font-light mb-4">Search For Near By Lawyers</h2>
       <div className="flex flex-col md:flex-row gap-4 items-center">
         {/* City Dropdown */}
         {/* <select

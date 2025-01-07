@@ -13,8 +13,12 @@ const useThreeAdvocatesByPracticeArea = () => {
     });
 
     console.log("3 Advocates by area =", threeAdvocatesByArea);
+    const civilLawyers = threeAdvocatesByArea?.Civil_Lawyer || [];
+    const familyLawyers = threeAdvocatesByArea?.Family_Lawyer || [];
+    const criminalLawyers = threeAdvocatesByArea?.Criminal_Lawyer || [];
+    const corporateLawyers = threeAdvocatesByArea?.Corporate_Lawyer || [];
 
-    return [threeAdvocatesByArea, isLoading, refetch];
+    return [civilLawyers, familyLawyers, criminalLawyers, corporateLawyers, isLoading, refetch];
 };
 
 export default useThreeAdvocatesByPracticeArea;

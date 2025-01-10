@@ -18,8 +18,9 @@ const useAdvocateDetailsById = (id) => {
 
     const advocate = advocateDetails?.advocate || [];
     const articles = advocateDetails?.articles || [];
+    const reviews = advocateDetails?.reviews || [];
 
-    return [advocate, articles, refetch];
+    return [advocate, articles, reviews, refetch];
 };
 
 export default useAdvocateDetailsById;

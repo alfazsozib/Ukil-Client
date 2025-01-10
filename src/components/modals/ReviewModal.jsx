@@ -14,32 +14,32 @@ const ReviewModal = ({ isOpen, setIsOpen, id, name }) => {
         const review = e.target.review.value;
         const rating = e.target.rating.value;
         const userName = localStorage.getItem("userName");
-        const email = localStorage.getItem("email");
+        // const email = localStorage.getItem("email");
 
         const reviewDoc = {
             userName,
-            email,
+            image: "",
             advocateId: id,
-            rating,
+            rating: parseInt(rating),
             review
         }
 
         console.log(reviewDoc);
 
-        // const res = await axiosPublic.post('/caseRequest', reviewDoc);
+        const res = await axiosPublic.post('/review', reviewDoc);
 
-        // if (res.data.insertedId) {
-        //     setIsOpen(false);
+        if (res.data.insertedId) {
+            setIsOpen(false);
 
-        //     Swal.fire({
-        //         position: "top-center",
-        //         icon: "success",
-        //         title: `You have successfully sent a case request to Advocate ${name}`,
-        //         showConfirmButton: false,
-        //         timer: 2000
-        //     });
+            Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: `Your Review is posted successfully`,
+                showConfirmButton: false,
+                timer: 2000
+            });
 
-        // }
+        }
 
 
     }

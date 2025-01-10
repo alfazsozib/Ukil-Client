@@ -3,6 +3,7 @@ import { SearchContext } from "../../provider/SearchProvider";
 import { useNavigate } from "react-router-dom";
 import PracticeFields from "../../pages/login-register/combobox/PracticeField";
 import PracticingCourt from "../../pages/login-register/combobox/PracticeArea";
+import { MdPersonSearch } from "react-icons/md";
 
 const TopRatedLawyerSearch = () => {
   // const [city, setCity] = useState('');
@@ -53,8 +54,9 @@ const TopRatedLawyerSearch = () => {
         {/* Search Button */}
         <button
           onClick={handleSearch}
-          className="bg-[#2ba329] hover:bg-[#4ec74c] text-white font-medium px-6 py-2 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-[#2ba329] text-[#2ba329] font-medium px-4 py-2 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center gap-1"
         >
+          <MdPersonSearch className="text-xl" />
           Search
         </button>
       </div>

@@ -11,6 +11,7 @@ import 'react-tabs/style/react-tabs.css';
 import '../profile/tab-css/Tab.css';
 import ArticlesTab from "./ArticlesTab";
 import ReviewModal from "../../components/modals/ReviewModal";
+import ReviewsTab from "./ReviewsTab";
 
 const AdvocateDetails = () => {
     const { id } = useParams();
@@ -23,7 +24,7 @@ const AdvocateDetails = () => {
 
     // Case Request 
     const [isOpen, setIsOpen] = useState(false);
-    
+
     const [modal, setModal] = useState("");
 
 
@@ -50,13 +51,13 @@ const AdvocateDetails = () => {
                         </div>
                         <div className="w-1/2 flex justify-end gap-4">
                             <button
-                                onClick={() => {setIsOpen(true); setModal("Request")}}
+                                onClick={() => { setIsOpen(true); setModal("Request") }}
                                 className="py-2 px-4 border border-[#2ba329] text-[#2ba329] text-lg font-normal hover:border-2 hover:border-[#30d32d] hover:text-[#2ba329] hover:font-semibold">
                                 Send Case Request
                             </button>
-                            <button 
-                            onClick={() => {setIsOpen(true); setModal("Review")}}
-                            className="py-2 px-4 border border-[#2ba329] text-[#2ba329] text-lg font-normal hover:border-2 hover:border-[#30d32d] hover:text-[#2ba329] hover:font-semibold">Review </button>
+                            <button
+                                onClick={() => { setIsOpen(true); setModal("Review") }}
+                                className="py-2 px-4 border border-[#2ba329] text-[#2ba329] text-lg font-normal hover:border-2 hover:border-[#30d32d] hover:text-[#2ba329] hover:font-semibold">Review </button>
                         </div>
                     </div>
                     <hr />
@@ -99,7 +100,7 @@ const AdvocateDetails = () => {
                         <ArticlesTab id={id} />
                     </TabPanel>
                     <TabPanel>
-                        <h2>Reviews from users</h2>
+                        <ReviewsTab id={id} />
                     </TabPanel>
                 </Tabs>
             </div>

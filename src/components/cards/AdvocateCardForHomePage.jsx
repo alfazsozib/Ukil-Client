@@ -1,4 +1,5 @@
 import { FaBuildingColumns, FaStar } from "react-icons/fa6";
+import { GoArrowUpRight } from "react-icons/go";
 import { PiBagFill } from "react-icons/pi";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -58,19 +59,21 @@ const AdvocateCardForHomePage = ({ lawyer }) => {
                         <p className="text-gray-700 font-normal">{yearOfPractice} years Experience</p>
                     </div>
                 </div>
-                <div className="flex flex-col justify-end">
+                <div className="w-2/5 flex flex-col justify-end items-end">
                     {
                         localStorage.token ?
                             <button
-                                className="p-2 bg-[#2ba329] text-white font-normal">
+                                className="p-2 text-[#2ba329] font-normal flex items-center">
                                 <Link to={`/advocate/${_id}`}>
                                     View Details
                                 </Link>
+                                <GoArrowUpRight />
                             </button>
                             : <button
                                 onClick={() => handleNotLogin()}
-                                className="p-2 bg-[#2ba329] text-white font-normal">
+                                className="p-2 text-[#2ba329] font-normal flex items-center ">
                                 View Details
+                                <GoArrowUpRight />
                             </button>
                     }
                 </div>

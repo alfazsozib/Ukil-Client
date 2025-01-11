@@ -33,7 +33,7 @@ const AdvocateDetails = () => {
         <>
             <div className="flex gap-4 container mx-auto my-10">
                 <div className="w-3/12 flex flex-col gap-3 items-center justify-center">
-                    <img className="flex-shrink-0 Detail = -,advocatecover w-48 h-48 rounded-full sm:mx-4 ring-4 ring-[#a0eb9f]" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
+                    <img className="flex-shrink-0 Detail = -, w-48 h-48 rounded-full sm:mx-4 ring-4 ring-[#a0eb9f]" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
                 </div>
                 <div className="w-9/12 space-y-6 p-6">
                     <div className="flex items-center">

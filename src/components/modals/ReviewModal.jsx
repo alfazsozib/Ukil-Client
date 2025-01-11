@@ -91,7 +91,7 @@ const ReviewModal = ({ isOpen, setIsOpen, id, name }) => {
                                     <h3 className="col-span-1 text-slate-600 font-medium">Rating : </h3>
                                     <input
                                         required
-                                        placeholder={`Rate advocate ${name}...`}
+                                        placeholder={`Rate advocate ${name} out of 5`}
                                         className="col-span-5 border-b focus:outline-none focus:border-[#2ba329] text-gray-600" 
                                         type="number" name="rating" />
                                 </div>

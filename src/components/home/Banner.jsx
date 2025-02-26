@@ -25,7 +25,7 @@ const Banner = () => {
                 <div className="flex items-center justify-between">
                     <Link to={'/'}>
                         <img
-                            className="h-[120px]"
+                            className="lg:h-[120px]"
                             src={logo}
                             alt="Logo"
                         />
@@ -152,14 +152,14 @@ const Banner = () => {
                     <h1 className="text-3xl font-semibold text-gray-800 lg:text-4xl">
                         Your Legal Partner for a Brighter Future
                     </h1>
-                    <p className="mt-6 text-gray-500 ">
+                    <p className="mt-6 text-gray-500 max-sm:text-lg">
                         We are confident in our ability to fight for your rights with passion and precision, delivering results that exceed your expectations
                     </p>
                 </div>
 
                 <div className="flex justify-center mt-10">
                     <img
-                        className="object-cover w-full h-96 rounded-xl lg:w-4/5"
+                        className="lg:object-cover w-full lg:h-96 h-64 rounded-xl lg:w-4/5"
                         src={banner}
                         alt="Hero"
                     />

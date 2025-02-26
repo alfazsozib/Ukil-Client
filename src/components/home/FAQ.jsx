@@ -7,17 +7,17 @@ const FAQ = () => {
         <div className='container mx-auto my-24'>
 
             <div className='flex items-center'>
-                <div className='w-1/2'>
+                <div className='w-1/2 hidden lg:block'>
                     <img className='' src={faq} alt="" />
                 </div>
-                <div className="w-full px-4">
+                <div className="w-full px-10">
                     <div className='my-6'>
                         <h1 className='text-4xl font-light text-center'>FAQ</h1>
                     </div>
                     <div className="mx-auto w-full max-w-2xl divide-y rounded-xl border">
                         <Disclosure as="div" className="p-6" defaultOpen={false}>
                             <DisclosureButton className="group flex w-full items-center justify-between">
-                                <span className="text-lg font-medium text-gray-600 group-data-[hover]:text-gray-600">
+                                <span className="text-lg max-sm:text-left font-medium text-gray-600 group-data-[hover]:text-gray-600">
                                     How can I search for nearby advocates on this website?
                                 </span>
                                 <IoIosArrowDown className="size-5  group-data-[open]:rotate-180" />
@@ -28,7 +28,7 @@ const FAQ = () => {
                         </Disclosure>
                         <Disclosure as="div" className="p-6" defaultOpen={false}>
                             <DisclosureButton className="group flex w-full items-center justify-between">
-                                <span className="text-lg font-medium text-gray-600 group-data-[hover]:text-gray-600">
+                                <span className="text-lg max-sm:text-left font-medium text-gray-600 group-data-[hover]:text-gray-600">
                                     How do I submit a case request to an advocate?
                                 </span>
                                 <IoIosArrowDown className="size-5  group-data-[open]:rotate-180" />
@@ -39,7 +39,7 @@ const FAQ = () => {
                         </Disclosure>
                         <Disclosure as="div" className="p-6" defaultOpen={false}>
                             <DisclosureButton className="group flex w-full items-center justify-between">
-                                <span className="text-lg font-medium text-gray-600 group-data-[hover]:text-gray-600">
+                                <span className="text-lg max-sm:text-left font-medium text-gray-600 group-data-[hover]:text-gray-600">
                                     Can I read articles posted by advocates?
                                 </span>
                                 <IoIosArrowDown className="size-5  group-data-[open]:rotate-180" />
@@ -50,7 +50,7 @@ const FAQ = () => {
                         </Disclosure>
                         <Disclosure as="div" className="p-6" defaultOpen={false}>
                             <DisclosureButton className="group flex w-full items-center justify-between">
-                                <span className="text-lg font-medium text-gray-600 group-data-[hover]:text-gray-600">
+                                <span className="text-lg  max-sm:text-left font-medium text-gray-600 group-data-[hover]:text-gray-600">
                                     Is my personal information secure when I submit a case request?
                                 </span>
                                 <IoIosArrowDown className="size-5  group-data-[open]:rotate-180" />
@@ -61,7 +61,7 @@ const FAQ = () => {
                         </Disclosure>
                         <Disclosure as="div" className="p-6" defaultOpen={false}>
                             <DisclosureButton className="group flex w-full items-center justify-between">
-                                <span className="text-lg font-medium text-gray-600 group-data-[hover]:text-gray-600">
+                                <span className="text-lg max-sm:text-left font-medium text-gray-600 group-data-[hover]:text-gray-600">
                                     How do I contact customer support if I face any issues?
                                 </span>
                                 <IoIosArrowDown className="size-5  group-data-[open]:rotate-180" />

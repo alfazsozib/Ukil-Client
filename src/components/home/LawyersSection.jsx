@@ -18,7 +18,7 @@ const LawyersSection = () => {
     };
 
     return (
-        <div className="container mx-auto my-16 space-y-8">
+        <div className="container mx-auto max-sm:pl-8 my-16 space-y-8">
             <div className="space-y-3">
                 <h1 className="text-3xl font-light my-4">Civil Lawyers</h1>
                 <div className="grid grid-cols-3 gap-4">
@@ -28,7 +28,7 @@ const LawyersSection = () => {
                         ))
                     }
                 </div>
-                <div className="flex justify-end px-5">
+                <div className="flex justify-end px-5 max-sm:mr-8">
                     <button
                         onClick={() => handleSeeAll("Civil Lawyer")}
                         className="text-lg text-[#2ba329] font-medium flex items-center gap-2">
@@ -46,7 +46,7 @@ const LawyersSection = () => {
                         ))
                     }
                 </div>
-                <div className="flex justify-end px-5">
+                <div className="flex justify-end px-5 max-sm:mr-8">
                     <button
                         onClick={() => handleSeeAll("Family Lawyer")}
                         className="text-lg text-[#2ba329] font-medium flex items-center gap-2">
@@ -64,7 +64,7 @@ const LawyersSection = () => {
                         ))
                     }
                 </div>
-                <div className="flex justify-end px-5">
+                <div className="flex justify-end px-5 max-sm:mr-8">
                     <button
                         onClick={() => handleSeeAll("Criminal Lawyer")}
                         className="text-lg text-[#2ba329] font-medium flex items-center gap-2">
@@ -82,7 +82,7 @@ const LawyersSection = () => {
                         ))
                     }
                 </div>
-                <div className="flex justify-end px-5">
+                <div className="flex justify-end px-5 max-sm:mr-8">
                     <button
                         onClick={() => handleSeeAll("Corporate Lawyer")}
                         className="text-lg text-[#2ba329] font-medium flex items-center gap-2">
